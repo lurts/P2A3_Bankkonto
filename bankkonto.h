@@ -18,8 +18,9 @@ public:
     Konto(double startSaldo = 0.0, float startSollZins = 0.0f, float startDispoZins = 0.0f)
             : saldo(startSaldo), sollZins(startSollZins), dispoZins(startDispoZins) {}
 
-    void einzahlen(const double& betrag);
-    void auszahlen(const double& betrag);
+    //Gibt bei erfolg 1 zurück, bei fehler -1
+    int einzahlen(const double& betrag);
+    int auszahlen(const double& betrag);
 
     void verzinsen();
 

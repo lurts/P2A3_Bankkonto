@@ -6,14 +6,29 @@
 //-
 
 #include <cmath>
+#include <iostream>
 #include "bankkonto.h"
 
-void Konto::einzahlen(const double &betrag) {
-    saldo += betrag;
+int Konto::einzahlen(const double &betrag) {
+    //Negative beträge sollen nicht eingezahlt werden dürfen, dafür ist die auszahlen() funktion
+    if (betrag > 0) {
+        saldo += betrag;
+        std::cout << betrag << " eingezahlt\n";
+        return 1;
+    }
+    //Bei Fehler -1 zurückgeben
+    return -1;
 }
 
-void Konto::auszahlen(const double &betrag) {
-    saldo += -betrag;
+int Konto::auszahlen(const double &betrag) {
+    //Negative beträge sollen nicht ausgezahlt werden können dafür ist die einzahlen() funktion
+    if (betrag > 0) {
+        saldo += -betrag;
+        std::cout << betrag << " ausgezahlt\n";
+        return 1;
+    }
+    //Bei Fehler -1 zurückgeben
+    return -1;
 }
 
 void Konto::verzinsen() {

@@ -35,12 +35,14 @@ int main() {
         std::cout << "Jahr\t" << i << "\tKontostand:\t" << testKonto.getKontostand() << "\n";
 
         if (kontobewegung > 0) {
-            testKonto.einzahlen(kontobewegung);
-            std::cout << kontobewegung << " eingezahlt\n";
+            if (testKonto.einzahlen(kontobewegung) == -1) {
+                std::cout << "Negative Kontobewegung!\n";
+            }
         }
         else {
-            testKonto.auszahlen(-kontobewegung);
-            std::cout << -kontobewegung << " ausgezahlt\n";
+            if (testKonto.auszahlen(-kontobewegung) == -1) {
+                std::cout << "Negative Kontobewegung!\n";
+            }
         }
     }
 }
