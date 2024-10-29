@@ -6,7 +6,6 @@
 //-
 
 #include <cmath>
-#include <iostream>
 #include "bankkonto.h"
 
 int Konto::einzahlen(const double &betrag) {
