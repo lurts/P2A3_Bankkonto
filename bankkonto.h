@@ -17,7 +17,7 @@ private:
 public:
     //Konstruktor
     Konto(double startSaldo = 0.0, float startSollZins = 0.0f, float startDispoZins = 0.0f)
-            : saldo(startSaldo), sollZins(startSollZins), dispoZins(startDispoZins) {}
+            : saldo(startSaldo), sollZins(startSollZins), dispoZins(startDispoZins) {};
 
     //Nur positive Werte zulässig
     //Gibt bei erfolg 1 zurück, bei fehler -1
