@@ -42,12 +42,14 @@ int main() {
             if (testKonto.einzahlen(kontobewegung) != 1) {
                 std::cout << "Negative Kontobewegung!\n";
             }
+            std::cout << kontobewegung << " eingezahlt\n";
         }
         else {
             //Wenn "kontobewegung" negativ ist soll eine auszahlung simuliert werden. Der Wert muss noch einmal invertiert werden da die auszahlen() funktion positive Werte erwartet
             if (testKonto.auszahlen(-kontobewegung) != 1) {
                 std::cout << "Negative Kontobewegung!\n";
             }
+            std::cout << -kontobewegung << " ausgezahlt\n";
         }
     }
 

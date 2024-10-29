@@ -13,7 +13,6 @@ int Konto::einzahlen(const double &betrag) {
     //Negative beträge sollen nicht eingezahlt werden dürfen, dafür ist die auszahlen() funktion
     if (betrag > 0) {
         saldo += betrag;
-        std::cout << betrag << " eingezahlt\n";
         return 1;
     }
     //Bei Fehler -1 zurückgeben
@@ -24,7 +23,6 @@ int Konto::auszahlen(const double &betrag) {
     //Negative beträge sollen nicht ausgezahlt werden können dafür ist die einzahlen() funktion
     if (betrag > 0) {
         saldo += -betrag;
-        std::cout << betrag << " ausgezahlt\n";
         return 1;
     }
     //Bei Fehler -1 zurückgeben
