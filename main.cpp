@@ -15,10 +15,12 @@ const double max = 500.0;
 
 int main() {
     //ein Konto-Objekt erzeugen, Objekt liegt auf dem Stack wird also automatisch wieder freigegeben benötigt also kein "delete"
+    //Wie in der Aufgabe gefordert wird mit einem Startguthaben von 100.0 und den vorgegebenen zinssätzen initialisiert
     Konto testKonto(100.0, 1.25, 2.5);
 
     //zufallsgenerator initialisieren
     //Diesen Generator und wie der zu benutzen ist hab ich aus dem Netz. CLion meinte std::rand() sei nicht gut
+    //quelle: https://stackoverflow.com/questions/19665818/generate-random-numbers-using-c11-random-library
     std::random_device rd;  // Zufallsquelle
     std::mt19937 gen(rd()); // Zufallszahlengenerator
     std::uniform_real_distribution<> dist(min, max);
