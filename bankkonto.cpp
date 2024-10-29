@@ -32,11 +32,12 @@ int Konto::auszahlen(const double &betrag) {
 }
 
 void Konto::verzinsen() {
-    //ist das Konto im Minus muss der andere Zins angewendet werden
+    //bei positivem saldo sollZins anwenden
     if (saldo > 0) {
         saldo *= 1 + sollZins/100;
     }
     else {
+        //bei negativem saldo dispoZins anwenden
         saldo *= 1 + dispoZins/100;
     }
 }

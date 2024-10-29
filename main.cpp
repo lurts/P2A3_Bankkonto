@@ -25,8 +25,9 @@ int main() {
 
     //100 mal verzinsen, ein/auszahlen und kontostand ausgeben
     for (int i = 1; i <= 100; ++i) {
+        //Zufallszahl von -500 bis +500 generieren
         double kontobewegung = dist(gen);
-        //auf zwei nachkommastellen runden
+        //auf zwei nachkommastellen runden damit keine "angefangenen Cent" aus-/eingezahlt werden
         kontobewegung = round(kontobewegung*100)/100;
 
         //Konto wird vor jeder Kontobewegung verzinst
@@ -35,14 +36,18 @@ int main() {
         std::cout << "Jahr\t" << i << "\tKontostand:\t" << testKonto.getKontostand() << "\n";
 
         if (kontobewegung > 0) {
+            //Wenn "kontobewegung" positiv ist soll eine einzahlung simuliert werden. Der Wert ist schon positiv muss also nicht invertiert werden
             if (testKonto.einzahlen(kontobewegung) == -1) {
                 std::cout << "Negative Kontobewegung!\n";
             }
         }
         else {
+            //Wenn "kontobewegung" negativ ist soll eine auszahlung simuliert werden. Der Wert muss noch einmal invertiert werden da die auszahlen() funktion positive Werte erwartet
             if (testKonto.auszahlen(-kontobewegung) == -1) {
                 std::cout << "Negative Kontobewegung!\n";
             }
         }
     }
+
+    return 1;
 }
