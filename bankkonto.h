@@ -15,6 +15,9 @@ private:
     float dispoZins;
 
 public:
+    Konto(double startSaldo = 0.0, float startSollZins = 0.0f, float startDispoZins = 0.0f)
+            : saldo(startSaldo), sollZins(startSollZins), dispoZins(startDispoZins) {}
+
     void einzahlen(const double& betrag);
     void auszahlen(const double& betrag);
 
@@ -23,7 +26,7 @@ public:
     void changeSollZins(const float& newZins);
     void changeDispoZins(const float& newZins);
 
-    double kontostand() const;
+    double getKontostand() const;
 };
 
 #endif //P2A3_BANKKONTO_BANKKONTO_H
